@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css" /> 
+    <title>Israel Weather API</title>
+</head>
+<body>
+    <h1>מציאת הטמפרטורה לפי עיר ותאריך</h1>
+    <form action="{{ url_for('data') }}" method="post">
+        <div>
+            <p>בחר עיר</p>
+                <select name="city">
+                    <option value="NONE" selected>בחר</option>
+                    <option value="TLV">תל אביב</option>
+                    <option value="ROP">ראש פינה</option>
+                    <option value="JER">ירושלים</option>
+                    <option value="BSH">באר שבע</option>
+                    <option value="ELT">אילת</option>
+                </select>
+        </div>
+        <div>
+            <p>- בחר תאריך בפורמט הבא</p>
+            <p>YYYYMMDD</p>
+            <p>למשל ראשון לדצמבר 1978 -19781201</p>
+            <p>רשום שנה בלבד כדי לקבל ממוצע שנתי</p>
+            <input type="text" name="date">
+        </div>
+        <button type="submit" value="Submit">שלח טופס</button>
+    </form>
+</body>
+</html>
